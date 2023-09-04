@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Surveys
+{% endblock %}
+
+{% block content %}
+<h1>
+    Surveys
+</h1>
+<ul>
+    {% for index, item in surveys.items() %}
+        <li><a href="/?survey={{index}}">{{item.title}}</a></li>
+    {% endfor %}
+</ul>
+</div>
+{% endblock %}

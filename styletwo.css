@@ -1,0 +1,57 @@
+.container{
+    max-width: 600px;
+    align-self: center;
+    margin: auto;
+}
+a {
+    font-size: large;
+}
+h1 {
+    text-align: center;
+    padding: 10px;
+}
+.content{
+    font-size: large;
+    padding: 10px;
+}
+.action{
+    text-align: center;
+    padding: 10px;
+}
+.action a, button {
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: larger;
+    margin: 20px;
+}
+.action a:hover{
+    background-color: lightblue;
+    color: red;
+
+}
+.question{
+    font-size: x-large;
+    padding: 10px;
+}
+.answer{
+    font-size: large;
+    padding: 10px;
+
+}
+.flash-msg{
+    color: red;
+    text-align: center;
+    font-size: x-large;
+}
+li{
+    list-style: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+textarea{
+    width: 90%;
+    height: 100px;
+}

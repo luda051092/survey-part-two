@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ survey.title %}}
+{% endblock %}
+
+{% block content %}
+<h1>
+    {{ survey.title }}
+</h1>
+{% for msg in get_flashed_messages() %}
+<p class="flash-msg">{{ msg }}</p>
+{% endfor %}
+<form action="/answer">
+    <div class="question">
+        {{survey.questions[question_index].question}}
+        <input type="hidden" name="question_index" value="{{question_index}}">
+
+    </div>
+    <div class="answers">
+        <ul>
+            {% for value in survey.questions[question_index].choices %}
+                <li>
+                    <input type="radio" value="{{loop.index0}}" name="radio_choice" id="radio_choice_{{loop.index0}}" required> <label for="radio_choice_{{loop.index0}}">{{ value }}</label>
+
+                </li>
+            {% endfor %}
+
+        </ul>
+    </div>
+    {% if survey.questions[question_index].allow_text %}
+    <div class="comment">
+        <h2>Comment:</h2>
+        <textarea name="comment"></textarea>
+    </div>
+    {% endif %}
+    <div class="action">
+        <button type="submit">Submit</button>
+    </div>
+</form>
+{% endblock %}
